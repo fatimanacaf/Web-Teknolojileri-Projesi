@@ -3,62 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirasımız: Karabağ FK - Fatima</title>
+    <title>Mirasımız - Fatima</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-heritage { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/baku-cover.jpg'); background-size: cover; color: white; padding: 80px 0; }
+        .heritage-card img { height: 250px; object-fit: cover; }
+    </style>
 </head>
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Web Projesi</a>
+            <a class="navbar-brand" href="index.html">Milli Mirasımız</a>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="index.html">Hakkında</a>
-                <a class="nav-link" href="cv.html">Özgeçmiş</a>
+                <a class="nav-link" href="index.html">Anasayfa</a>
                 <a class="nav-link" href="sehrim.html">Şehrim</a>
                 <a class="nav-link active" href="mirasimiz.html">Mirasımız</a>
+                <a class="nav-link" href="cv.html">CV</a>
             </div>
         </div>
     </nav>
 
+    <header class="hero-heritage text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Azerbaycan'ın Hazineleri</h1>
+            <p class="lead">Tarihimizden Geleceğe Uzanan Değerlerimiz</p>
+        </div>
+    </header>
+
     <main class="container my-5">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1 class="display-4 text-success">Karabağ FK</h1>
-                <p class="lead">Azerbaycan'ın gururu, "Atlılar" lakabıyla tanınan efsanevi futbol kulübü.</p>
-                <p>1951 yılında Ağdam'da kurulan Karabağ FK, sadece bir spor kulübü değil, aynı zamanda bir halkın direnişinin ve azminin sembolüdür.</p>
-            </div>
-            <div class="col-md-6 text-center">
-                <!-- Buraya Karabağ FK logosu veya bir stadyum resmi gelebilir -->
+        <!-- BÖLÜM 1: KARABAĞ FK -->
+        <section class="row align-items-center mb-5 bg-white p-4 shadow-sm rounded">
+            <div class="col-md-4 text-center">
                 <img src="img/qarabag.jpg" class="img-fluid rounded shadow" alt="Karabağ FK">
             </div>
-        </div>
+            <div class="col-md-8">
+                <h2 class="text-success">Karabağ Futbol Kulübü</h2>
+                <p>1951 yılında kurulan Karabağ FK, sadece bir spor kulübü değil, bir halkın direnişinin sembolüdür. Şampiyonlar Ligi'ne katılan ilk Azerbaycan takımı olarak tarihe geçmiştir.</p>
+                <ul class="list-inline text-muted">
+                    <li class="list-inline-item">#Atlılar</li>
+                    <li class="list-inline-item">#Ağdam</li>
+                    <li class="list-inline-item">#KarabağAze</li>
+                </ul>
+            </div>
+        </section>
 
-        <section class="mt-5">
-            <h2 class="border-bottom pb-2">Başarılarımız</h2>
-            <div class="row text-center mt-4">
-                <div class="col-md-4">
-                    <div class="card p-3 shadow-sm">
-                        <h3>10+</h3>
-                        <p>Azerbaycan Premier Lig Şampiyonluğu</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card p-3 shadow-sm">
-                        <h3>Avrupa</h3>
-                        <p>Şampiyonlar Ligi ve Avrupa Ligi Düzenli Katılım</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card p-3 shadow-sm">
-                        <h3>Milli Ruh</h3>
-                        <p>Ağdam'ın Sesi, Azerbaycan'ın Elçisi</p>
+        <!-- BÖLÜM 2: DİĞER MİRASLARIMIZ -->
+        <div class="row g-4">
+            <!-- Kız Kalesi -->
+            <div class="col-md-6">
+                <div class="card heritage-card h-100 shadow-sm border-0">
+                    <img src="img/baku1.jpg" class="card-img-top" alt="Kız Kalesi">
+                    <div class="card-body">
+                        <h4 class="card-title">Kız Kalesi (Qız Qalası)</h4>
+                        <p class="card-text">UNESCO Dünya Mirası listesinde yer alan bu yapı, Bakü'nün en eski ve en gizemli sembolüdür. Yüzyıllardır Hazar kıyısında şehri selamlamaktadır.</p>
                     </div>
                 </div>
             </div>
-        </section>
+            <!-- Halı Sanatı -->
+            <div class="col-md-6">
+                <div class="card heritage-card h-100 shadow-sm border-0">
+                    <img src="img/hali.jpg" class="card-img-top" alt="Azerbaycan Halısı">
+                    <div class="card-body">
+                        <h4 class="card-title">Azerbaycan Halı Sanatı</h4>
+                        <p class="card-text">Halılarımız, asırlık geleneklerin ve estetiğin ilmik ilmik işlendiği milli gururumuzdur. Karabağ ve Tebriz halıları bu sanatın zirvesidir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer class="text-center py-4 bg-dark text-white fixed-bottom">
+    <footer class="text-center py-4 bg-dark text-white">
         <p>&copy; 2026 Fatima - Tüm Hakları Saklıdır.</p>
     </footer>
 
