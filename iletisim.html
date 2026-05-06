@@ -70,12 +70,11 @@
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
             let message = document.getElementById("message").value;
-            let gender = document.querySelector('input[name="gender"]:checked');
-
-            if (name == "" || email == "" || message == "" || !gender) {
-                alert("Lütfen tüm alanları eksiksiz doldurunuz!");
-                return false; // Formun gönderilmesini engeller
-            }
+          let gender = document.querySelector('input[name="gender"]:checked');
+if (!gender) {
+    alert("Lütfen cinsiyetinizi seçiniz!");
+    return false;
+}
 
             // E-posta formatı kontrolü
             let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
