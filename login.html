@@ -2,28 +2,75 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giriş Yap - Fatima</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .login-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 10px;
+        }
+    </style>
 </head>
-<body class="bg-light">
-    <div class="container mt-5">
+<body>
+
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-4 bg-white p-4 shadow rounded">
-                <h3 class="text-center mb-4">Kullanıcı Girişi</h3>
-                <form action="login_kontrol.php" method="POST">
-                    <div class="mb-3">
-                        <label class="form-label">E-posta (Öğrenci No):</label>
-                        <input type="text" name="username" class="form-control" placeholder="g211210001@sakarya.edu.tr" required>
+            <div class="col-md-5 col-lg-4">
+                <div class="card login-card p-4">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold text-primary">Giriş Yap</h2>
+                        <p class="text-muted">Web Teknolojileri Projesi</p>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Şifre:</label>
-                        <input type="password" name="password" class="form-control" required>
+
+                    <form action="login_kontrol.php" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-secondary">E-posta Adresi</label>
+                            <input type="email" 
+                                   name="username" 
+                                   id="email" 
+                                   class="form-control" 
+                                   placeholder="b231210573@sakarya.edu.tr" 
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label text-secondary">Şifre</label>
+                            <input type="password" 
+                                   name="password" 
+                                   id="password" 
+                                   class="form-control" 
+                                   placeholder="Öğrenci Numaranız" 
+                                   required>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary fw-bold">Giriş Yap</button>
+                            <a href="index.html" class="btn btn-outline-secondary btn-sm">Vazgeç ve Dön</a>
+                        </div>
+                    </form>
+                    
+                    <div class="text-center mt-3">
+                        <small class="text-muted">© 2026 b231210573 - Tüm Hakları Saklıdır.</small>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
