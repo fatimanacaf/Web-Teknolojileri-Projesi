@@ -3,94 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim - Fatima</title>
+    <title>İletişim - b231210573</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .contact-card { background: white; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 30px; }
+        .btn-vue { background-color: #42b983; color: white; border: none; }
+        .btn-vue:hover { background-color: #3aa876; color: white; }
+    </style>
 </head>
-<body class="bg-light">
-    <!-- Navigasyon -->
+<body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Fatima'nın Portfolyosu</a>
+            <a class="navbar-brand" href="index.html">Portfolyo</a>
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="index.html">Anasayfa</a>
                 <a class="nav-link" href="sehrim.html">Şehrim</a>
                 <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+                <a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a>
                 <a class="nav-link active" href="iletisim.html">İletişim</a>
             </div>
         </div>
     </nav>
 
-    <main class="container my-5">
+    <main class="container my-5" id="app">
         <div class="row justify-content-center">
-            <div class="col-md-6 bg-white p-4 shadow rounded">
-                <h2 class="text-center mb-4">Bana Ulaşın</h2>
-                
-                <!-- Form Başlangıcı -->
-                <form id="contactForm" action="islem.php" method="POST" onsubmit="return validateForm()">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Adınız Soyadınız:</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
+            <div class="col-md-6">
+                <div class="contact-card">
+                    <h2 class="text-center mb-4 text-primary">Bana Ulaşın</h2>
                     
-                    <div class="mb-3">
-                        <label for="email" class="form-label">E-posta Adresiniz:</label>
-                        <input type="email" class="form-control" id="email" name="email">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Cinsiyet:</label><br>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" value="Kadın">
-                            <label class="form-check-label">Kadın</label>
+                    <form id="contactForm" action="islem.php" method="POST" onsubmit="return validateForm()">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ad Soyad</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Adınızı giriniz">
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" value="Erkek">
-                            <label class="form-check-label">Erkek</label>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="ornek@mail.com">
                         </div>
-                    </div>
 
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Mesajınız:</label>
-                        <textarea class="form-control" id="message" name="message" rows="4"></textarea>
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label d-block">Cinsiyet</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="Erkek">
+                                <label class="form-check-label" for="male">Erkek</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="Kadın">
+                                <label class="form-check-label" for="female">Kadın</label>
+                            </div>
+                        </div>
 
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary">Gönder</button>
-                        <button type="reset" class="btn btn-outline-secondary">Temizle</button>
-                    </div>
-                </form>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mesajınız</label>
+                            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary fw-bold">Native JS ile Gönder</button>
+                            
+                            <button type="button" @click="vueValidate" class="btn btn-vue fw-bold">Vue.js ile Denetle</button>
+                            
+                            <button type="reset" class="btn btn-outline-secondary btn-sm mt-2">Temizle</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
-
-    <!-- JAVASCRIPT KONTROLÜ -->
-    <script>
-        function validateForm() {
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let message = document.getElementById("message").value;
-          let gender = document.querySelector('input[name="gender"]:checked');
-if (!gender) {
-    alert("Lütfen cinsiyetinizi seçiniz!");
-    return false;
-}
-
-            // E-posta formatı kontrolü
-            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert("Lütfen geçerli bir e-posta adresi giriniz!");
-                return false;
-            }
-
-            return true; // Her şey doğruysa gönderilir
-        }
-    </script>
 
     <footer class="text-center py-4 bg-dark text-white fixed-bottom d-none d-md-block">
         <p>&copy; 2026 Fatima - Tüm Hakları Saklıdır.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name == "" || email == "") {
+                alert("Native JS Hatası: Ad ve E-posta alanları boş bırakılamaz!");
+                return false;
+            }
+            if (!gender) {
+                alert("Native JS Hatası: Lütfen cinsiyet seçiniz!");
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert("Native JS Hatası: Geçersiz e-posta formatı!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            methods: {
+                vueValidate() {
+                    let name = document.getElementById("name").value;
+                    let email = document.getElementById("email").value;
+                    
+                    if (name.length < 3) {
+                        alert("Vue.js Mesajı: İsim çok kısa!");
+                    } else if (!email.includes("@")) {
+                        alert("Vue.js Mesajı: E-posta adresi '@' içermelidir!");
+                    } else {
+                        alert("Vue.js Mesajı: Form verileri mantıklı görünüyor. Göndermek için mavi butona basabilirsiniz!");
+                    }
+                }
+            }
+        }).mount('#app');
+    </script>
 </body>
 </html>

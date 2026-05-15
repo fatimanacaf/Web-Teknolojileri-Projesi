@@ -3,80 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkında - Fatima</title>
+    <title>Hakkında - b231210573</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <style>
         .hero-section {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: white;
             padding: 80px 0;
             position: relative;
-            overflow: hidden;
         }
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(13,110,253,0.1) 0%, transparent 60%);
-            animation: pulse 6s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
+        .profile-avatar-container {
+            width: 170px;
+            height: 170px;
+            margin: 0 auto;
             border-radius: 50%;
+            background: #ffffff;
             border: 5px solid #0d6efd;
             box-shadow: 0 0 30px rgba(13,110,253,0.4);
-        }
-        .profile-placeholder {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid #0d6efd;
-            box-shadow: 0 0 30px rgba(13,110,253,0.4);
-            background: linear-gradient(135deg, #0d6efd, #6610f2);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            margin: 0 auto;
-        }
-        .info-card {
-            border: none;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-        .info-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        .icon-box {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-        }
-        .hobby-badge {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            color: #0d47a1;
-            border-radius: 25px;
-            padding: 8px 18px;
-            margin: 5px;
-            display: inline-block;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: transform 0.2s;
-        }
-        .hobby-badge:hover {
-            transform: scale(1.05);
         }
         .section-title {
             font-size: 1.8rem;
@@ -86,21 +32,15 @@
             padding-bottom: 10px;
             margin-bottom: 25px;
         }
-        .video-wrapper {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .quick-link-btn {
-            border-radius: 30px;
-            padding: 10px 28px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .quick-link-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(13,110,253,0.4);
-        }
+        .gallery-img:hover { transform: scale(1.05); }
         .fact-row {
             background: #f8f9fa;
             border-radius: 12px;
@@ -112,13 +52,9 @@
 </head>
 <body class="bg-light">
 
-    <!-- NAVİGASYON -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Fatima'nın Portfolyosu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand fw-bold" href="index.html">Portfolyo</a>
             <div class="collapse navbar-collapse" id="navMenu">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link active" href="index.html">Hakkında</a>
@@ -127,128 +63,71 @@
                     <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
                     <a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a>
                     <a class="nav-link" href="iletisim.html">İletişim</a>
+                    <a class="nav-link fw-bold text-info" href="login.html">Giriş Yap</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO / TANITIM -->
-    <header class="hero-section text-center position-relative">
-        <div class="container position-relative" style="z-index:2;">
-            <div class="profile-placeholder mb-4">
-                👩‍💻
+    <header class="hero-section text-center">
+        <div class="container">
+            <div class="profile-avatar-container mb-4">
+                <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 20 C60 20 40 50 40 100 C40 150 60 180 100 180 C140 180 160 150 160 100 C160 50 140 20 100 20" fill="#2D3E50"/>
+                    <ellipse cx="100" cy="105" rx="45" ry="55" fill="#C68E62"/>
+                    <g stroke="#000" stroke-width="3" fill="none">
+                        <circle cx="82" cy="100" r="14"/>
+                        <circle cx="118" cy="100" r="14"/>
+                        <line x1="96" y1="100" x2="104" y2="100"/>
+                    </g>
+                    <circle cx="82" cy="100" r="3.5" fill="#000"/>
+                    <circle cx="118" cy="100" r="3.5" fill="#000"/>
+                    <path d="M90 135 Q100 145 110 135" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M45 185 Q100 165 155 185 L155 200 L45 200 Z" fill="#2D3E50"/>
+                </svg>
             </div>
-            <h1 class="display-4 fw-bold mb-2">Merhaba, ben Fatima!</h1>
-            <p class="lead mb-1">Bilgisayar Mühendisi Adayı &amp; Network Tutkunu</p>
-            <p class="text-light opacity-75 mb-4">
-                <span class="me-3">🇦🇿 Azerbaycan</span>
-                <span class="me-3">🎓 Sakarya Üniversitesi</span>
-                <span>📅 28 Şubat 2004</span>
-            </p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="cv.html" class="btn btn-primary quick-link-btn">Özgeçmişim</a>
-                <a href="iletisim.html" class="btn btn-outline-light quick-link-btn">İletişime Geç</a>
-            </div>
+            <h1 class="display-4 fw-bold mb-2">Fatima</h1>
+            <p class="lead mb-4">Bilgisayar Mühendisi Adayı | b231210573</p>
         </div>
     </header>
 
     <main class="container my-5">
-
-        <!-- HAKKIMDA KISIM -->
         <section class="mb-5">
-            <h2 class="section-title">Hakkımda</h2>
+            <h2 class="section-title">Kısa Bir Tanıtım</h2>
             <div class="row g-4 align-items-center">
                 <div class="col-md-7">
                     <p class="fs-5 text-muted lh-lg">
-                        Azerbaycan'ın başkenti Bakü'de doğdum ve büyüdüm. Kimya bölümünde başladığım
-                        üniversite yolculuğumu, teknolojiye olan tutkum sayesinde Bilgisayar Mühendisliği'ne
-                        yönelterek Sakarya Üniversitesi'nde devam ettiriyorum.
-                    </p>
-                    <p class="fs-5 text-muted lh-lg">
-                        SilkWay Aviation'da yaptığım CCNA stajıyla ağ teknolojilerine olan ilgimi
-                        pratiğe döktüm. Web geliştirme, siber güvenlik ve network alanlarında kendimi
-                        sürekli geliştirmeye çalışıyorum.
+                        Azerbaycanlı bir Bilgisayar Mühendisliği öğrencisiyim. Sakarya Üniversitesi'nde aldığım eğitimle 
+                        yazılım dünyasına adım attım. Web teknolojileri ve ağ sistemleri temel uzmanlık alanlarım arasındadır.
                     </p>
                 </div>
                 <div class="col-md-5">
                     <div class="fact-row"><strong>🏠 Memleket:</strong> Bakü, Azerbaycan</div>
-                    <div class="fact-row"><strong>🎓 Üniversite:</strong> Sakarya Üniversitesi</div>
-                    <div class="fact-row"><strong>📚 Bölüm:</strong> Bilgisayar Mühendisliği</div>
-                    <div class="fact-row"><strong>💼 Deneyim:</strong> SilkWay Aviation (CCNA Stajı)</div>
+                    <div class="fact-row"><strong>🎓 Okul:</strong> Sakarya Üniversitesi</div>
                     <div class="fact-row"><strong>🌐 Diller:</strong> Azerbaycanca, Türkçe, İngilizce, Rusça</div>
                 </div>
             </div>
         </section>
 
-        <!-- HOBİLER / AKTİVİTELER -->
         <section class="mb-5">
-            <h2 class="section-title">Hobiler &amp; Etkinlikler</h2>
-            <div class="row g-4">
+            <h2 class="section-title">Şehrimden Kareler</h2>
+            <div class="row g-3">
                 <div class="col-md-4">
-                    <div class="card info-card text-center p-4">
-                        <div class="icon-box">🎨</div>
-                        <h5 class="fw-bold">Karakalem Çizim</h5>
-                        <p class="text-muted">Sürreal karakalem çalışmaları yapıyorum. Hayal gücümü
-                        kağıda aktarmak benim için bir terapi gibi.</p>
-                    </div>
+                    <img src="img/baku1.jpg" class="gallery-img" alt="Bakü 1">
                 </div>
                 <div class="col-md-4">
-                    <div class="card info-card text-center p-4">
-                        <div class="icon-box">🏊‍♀️</div>
-                        <h5 class="fw-bold">Yüzme</h5>
-                        <p class="text-muted">Hazar Denizi kıyısında büyümenin etkisiyle yüzme
-                        hayatımın vazgeçilmez bir parçası haline geldi.</p>
-                    </div>
+                    <img src="img/baku2.jpg" class="gallery-img" alt="Bakü 2">
                 </div>
                 <div class="col-md-4">
-                    <div class="card info-card text-center p-4">
-                        <div class="icon-box">✈️</div>
-                        <h5 class="fw-bold">Şehir Keşfi</h5>
-                        <p class="text-muted">Yeni şehirleri keşfetmek, farklı kültürleri tanımak
-                        ve her yerde yeni bir hikaye bulmak beni heyecanlandırıyor.</p>
-                    </div>
+                    <img src="img/baku3.jpg" class="gallery-img" alt="Bakü 3">
                 </div>
             </div>
+            <p class="text-center text-muted mt-3 italic"><em>"Gezilecek yerler ve kültürel mirasımız bölümlerinde daha fazla detay bulabilirsiniz."</em></p>
         </section>
-
-        <!-- VİDEO BÖLÜMÜ -->
-        <section class="mb-5">
-            <h2 class="section-title">Bakü'yü Tanıyın</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="video-wrapper">
-                        <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube.com/embed/2rEDfJ-XPQA"
-                                title="Bakü Tanıtım Videosu"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                    <p class="text-center text-muted mt-3">
-                        <em>Memleketim Bakü — Doğu'nun Paris'i, Hazar'ın İncisi</em>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- HIZLI BAĞLANTILAR -->
-        <section class="bg-dark text-white p-5 rounded-4 text-center mb-4">
-            <h3 class="fw-bold mb-3">Daha Fazlasını Keşfet</h3>
-            <p class="opacity-75 mb-4">Portfolyomun diğer bölümlerine göz atın</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="cv.html" class="btn btn-outline-light quick-link-btn">📄 Özgeçmiş</a>
-                <a href="sehrim.html" class="btn btn-outline-light quick-link-btn">🏙️ Şehrim</a>
-                <a href="mirasimiz.html" class="btn btn-outline-light quick-link-btn">🏛️ Mirasımız</a>
-                <a href="ilgi-alanlarim.html" class="btn btn-outline-light quick-link-btn">🎬 İlgi Alanlarım</a>
-            </div>
-        </section>
-
     </main>
 
-    <!-- FOOTER -->
     <footer class="text-center py-4 bg-dark text-white">
-        <p class="mb-0">&copy; 2026 Fatima - Kişisel Portfolyo</p>
+        <p class="mb-0">&copy; 2026 b231210573 - Tüm Hakları Saklıdır.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
